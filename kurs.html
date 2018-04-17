@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <title>Swift Kurs - Answer2You</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="css/bootstrap.min.css?ver=10" rel="stylesheet">
+
+   <!-- Custom Fonts -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+   <!-- Theme CSS -->
+   <link href="css/course.css?ver=34" rel="stylesheet">
+
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   <![endif]-->
+</head>
+<body id="page-top">
+   <div id="navbar-wrapper">
+      <header>
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class="navbar-brand section-heading-logo"><span onclick="javascript:location.href='/swift'">ANSWER 2 YOU</span></a>
+               </div>
+            </div>
+         </nav>
+      </header>
+   </div>
+   <div id="wrapper">
+      <div id="sidebar-wrapper">
+         <aside id="sidebar">
+            <ul id="sidemenu" class="sidebar-nav">
+               <li href="#tab1" data-toggle="tab">
+                  <a onclick="ajax('Wstep');">
+                  <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
+                  <span class="sidebar-title">Wstęp</span>
+                  </a>
+               </li>
+               <li>
+                  <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-1">
+                  <span class="sidebar-icon"><i class="fa fa-sitemap"></i></span>
+                  <span class="sidebar-title">xCode - Podstawy</span>
+                     <b class="caret"></b>
+                  </a>
+                  <ul id="submenu-1" class="panel-collapse collapse panel-switch" role="menu" href="#tab2" data-toggle="tab">
+                     <li>
+                        <a href="#1b" data-toggle="tab" onclick="ajax('XcodePodstawy');tab_pane(1);"><i class="fa fa-bars"></i>Wprowadzenie</a>
+                     </li>
+                     <li>
+                        <a href="#" onclick="ajax('XcodePodstawy_prezentacja');tab_pane(2);"><i class="fa fa-video-camera"></i>Prezentacja</a>
+                     </li>
+                     <li>
+                        <a href="#" onclick="ajax('XcodePodstawy_quiz');tab_pane(3);"><i class="fa fa-check-square-o"></i>quiz</a>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="sidebar-icon"><i class="fa fa-video-camera"></i></span>
+                  <span class="sidebar-title">Swift - Podstawy</span>  
+                  </a>
+               </li>
+               <li>
+                  <a href="#" onclick="ajax('XcodeRozszerzenie');">
+                  <span class="sidebar-icon"><i class="fa fa-video-camera"></i></span>
+                  <span class="sidebar-title">xCode - Rozszerzenie</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="sidebar-icon"><i class="fa fa-video-camera"></i></span>
+                  <span class="sidebar-title">Swift - Rozszerzenie </span>
+                  </a>
+               </li>
+               <li>
+                  <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                  <span class="sidebar-icon"><i class="fa fa-sitemap"></i></span>
+                  <span class="sidebar-title">Aplikacje</span>
+                     <b class="caret"></b>
+               </a>
+               <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                  <li>
+                     <a href="#"><i class="fa fa-caret-right"></i>Hello world</a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-caret-right"></i>Kalkulator systemów <span>liczbowych</span></a>
+                  </li>
+               </ul>
+               </li>
+            </ul>
+         </aside>            
+      </div>
+      <main id="page-content-wrapper" class="margincontent" role="main">
+         <div id="content">
+            <iframe src="prezentacje/wstep.html"></iframe>
+         </div>
+      </main>
+   </div>
+   <div style="clear:both"></div>
+   
+   <div class="bottom-panel">
+      <div class="tab-content clearfix">
+         <div class="tab-pane active" id="tab1">
+            <ul class="nav nav-pills arrow-steps clearfix">
+               <li class="active step">
+                  <a href="#1a" data-toggle="tab">Sterowanie</a>
+               </li>
+               <!--
+               <li class="step">
+                  <a href="#2a" data-toggle="tab">Zakładka 2</a>
+               </li>
+               -->
+            </ul>
+         </div>
+         <div class="tab-pane" id="tab2">
+            <ul class="nav nav-pills arrow-steps clearfix">
+               <li class="step">
+                  <a href="#1b" data-toggle="tab">Zakładka 3</a>
+               </li>
+               <li class="step">
+                  <a href="#2b" data-toggle="tab">Zakładka 4</a>
+               </li>
+               <li class="step">
+                  <a href="#3b" data-toggle="tab">Zakładka 5</a>
+               </li>
+               <li class="step">
+                  <a href="#4b" data-toggle="tab">Zakładka 6</a>
+               </li>
+            </ul>
+         </div>
+         <script>
+            function tab_pane(number) {
+               $( "ul > li").removeClass("active");
+               $( "ul > li:nth-child("+number+")").addClass("active");
+            }
+         </script> 
+      </div>
+   
+      <div class="tab-content clearfix">
+         <div class="tab-pane active" id="1a">
+            <div class="row" style="margin:0">
+               <div class="col-lg-6 col-md-6">
+                  <h4>Nawigacja w obrębie prezentacji</h4>
+                  <p>Na pierwszym screenie zawsze znajdują się tematy omawiane w danym dziale. Kliknięcie spowoduje natychmiastowe przejście do szukanego slajdu.</p>
+                  <br />
+                  <p>Strzałki w lewo oraz w prawo (zarówno na klawiaturze, jak i w prawym dolnym rogu prezentacji) służą do poruszania się między slajdami, natomiast strzałki w górę/ w dół pozwalają zagłębić się w danym temacie.</p>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                  <div class="well">
+                     <p>strzałki - lewo/góra/prawo/dół</p>
+                     <p>esc - mapa prezentacji
+                     <p>spacja - następny slajd</p>
+                     <p>home - początek</p>
+                     <p>end - koniec</p>
+                     <p>b - pauza (video)</p>
+                     <p>v - wznowienie (video)</p>
+                  </div>
+               </div>
+            </div>            
+         </div>
+         <!--
+         <div class="tab-pane" id="2a">
+           <h3>Przykładowy tekst 2</h3>        
+         </div>
+         -->
+         <div class="tab-pane" id="1b">
+           <h3>Przykładowy tekst 3</h3>        
+         </div>
+         <div class="tab-pane" id="2b">
+            <h3>Przykładowy tekst 4</h3>
+         </div>
+         <div class="tab-pane" id="3b">
+            <h3>Przykładowy tekst 5</h3>
+         </div>
+         <div class="tab-pane" id="4b">
+            <h3>Przykładowy tekst 6</h3>
+         </div>
+      </div>
+   </div>
+   <!-- jQuery -->
+   <script src="js/jquery.min.js"></script>
+
+   <!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/praktyki.js"></script>
+   <script>
+   $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+   });
+   </script>
+</body>
+</html>

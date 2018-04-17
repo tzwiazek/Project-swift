@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <title>Swift Tutorial - Answer2You</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom Fonts -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+   <!-- Theme CSS -->
+   <link href="css/creative.css" rel="stylesheet">
+
+   <!-- Fam Fam flags -->
+   <link href="css/famfamfam_flags.css" rel="stylesheet" type="text/css">
+
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+   <!-- jQuery -->
+   <script src="js/jquery.min.js"></script>
+</head>
+<body id="page-top">
+   <div id="hola">
+      <div id="preloader">
+         <span></span>
+         <span></span>
+      </div>
+      <div id="preloader-title">
+         <h1>Zapraszamy</h1>
+      </div>
+   </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+<script>
+//preloader
+$(document).ready(function() {$.scrollLock( true );});
+
+$(window).load(function() {
+   setTimeout(function() {
+      $('#preloader').velocity({
+         opacity : 0.1,
+         translateY: "-50px"
+      }, {
+         duration: 400,
+         complete: function() {
+            $("#preloader-title").css("display", "block");
+            $('#hola').velocity({
+               translateY : "-100%"
+            }, {
+               duration: 1000,
+               easing: [0.7,0,0.3,1],
+               complete: function() {
+                  $('.home').addClass('animate-border divide');
+                  $.scrollLock( false );
+               }
+            })
+         }
+      })
+   },1000)
+})
+</script>
+   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+         <!-- 768px -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only"></span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <div class="navbar-toggle">
+               <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                     <i class="fa fa-globe fa-fw"></i> <i class="fa fa-caret-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-flags dropdown-user betterwidthflags">
+                     <li><a href="#"><i class="fa famfamfam-flag-pl fa-fw"></i> PL</a></li>
+                     <li><a href="#"><i class="fa famfamfam-flag-gb fa-fw"></i> EN</a></li>
+                  </ul>
+               </li>
+            </div >
+            <a class="navbar-brand section-heading-logo" href="#page-top"><span class="logo-text">ANSWER</span><span class="logo-two">2</span><span class="logo-text">YOU</span></a>
+         </div>
+         <!-- /768px -->
+
+         <!-- navbar-collapse -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                 <li>
+                    <a class="page-scroll" href="#about">O A<span style="color:#F05F40;">2</span>U</a>
+                 </li>
+                 <li>
+                     <a class="page-scroll" href="#services">Kursy</a>
+                 </li>
+               <li class="dropdown dropdown-flags">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                     <i class="fa fa-globe fa-fw"></i> <i class="fa fa-caret-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user betterwidthflags">
+                     <li><a href="#"><i class="fa famfamfam-flag-pl fa-fw"></i> PL</a></li>
+                     <li><a href="#"><i class="fa famfamfam-flag-gb fa-fw"></i> EN</a></li>
+                  </ul>
+              </li>
+            </ul>
+         </div>
+         <!-- /navbar-collapse -->
+      </div>
+   <!-- /container-fluid -->
+   </nav>
+
+    <header>
+       <div class="header-content">
+            <div class="header-content-inner">
+                <h1 class="section-heading-logo text-center">ANSWER<span>2</span>YOU</h1>
+                <hr>
+                <p>Kurs został przygotowany z myślą o wszystkich, którzy chcą nauczyć się języka Swift. Jak powszechnie wiadomo - istotą skuteczniej nauki jest przełożenie złożonego i specyficznego języka programowania na przekaz zrozumiały dla odbiorcy.</p>
+            </div>
+        </div>
+        <div id="particles-js" class="shadow"></div>
+    </header>
+<!--
+   <section class="small-section shadow">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+               <h1 class="section-heading-logo text-center">ANSWER<span style="color:#F05F40;padding:0px 5px 0px 5px;">2</span>YOU</h1>
+               <hr>
+               <p style="font-weight:600;">Kurs został przygotowany z myślą o wszystkich, którzy chcą nauczyć się języka Swift. Jak powszechnie wiadomo - istotą skuteczniej nauki jest przełożenie złożonego i specyficznego języka programowania na przekaz zrozumiały dla odbiorcy.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+-->
+   <section id="services">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12 text-center">
+               <h1 class="section-heading text-center">Kurs programowania - jak to działa?</h1>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 col-md-4 text-center">
+               <div class="service-box">
+                  <i class="fa fa-5x fa-terminal text-primary sr-icons"></i>
+                  <h3>Stwórz swój własny kod</h3>
+                  <p class="text-muted">Nie ograniczaj się -  twórz co chcesz i kiedy chcesz.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+               <div class="service-box">
+                  <i class="fa fa-5x fa-window-restore text-primary sr-icons"></i>
+                  <h3>Brak reklam</h3>
+                  <p class="text-muted">Ucz się bez rozpraszających reklam.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+               <div class="service-box">
+                  <i class="fa fa-5x fa-mobile text-primary sr-icons"></i>
+                  <h3>Nauczanie mobilne</h3>
+                  <p class="text-muted">Szlifuj swoje umiejętności programowania, korzystając z naszego kursu online.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="bg-primary small-section" id="about">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+               <a href="/swift/kurs" class="page-scroll btn btn-default btn-xl sr-button">Zacznij już teraz</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section>
+      <div class="container small-container">
+         <div class="row">
+            <div class="col-md-12">
+               <h1 class="section-heading text-center">Nauka programowania</h1>
+            </div>
+         </div>
+         <!-- step 1 -->
+         <div class="row">
+            <div class="col-md-offset-2 col-md-4 sr-right-text">
+               <h3>Etap 1 Nauka</h3>
+               <p>Początki zwykle są trudne ale pamiętaj, że branża IT nadal się rozwija i potrzebuje programistów.</p>
+            </div>
+            <div class="col-md-6 sr-right" id="terminal">
+               <!-- terminal -->
+               <div class="cmd-container">
+                  <div class="cmd-header">
+                     <div class="cmd-header-title">/terminal</div>
+                     <div class="buttons">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                     </div>
+                  </div>
+                  <div id="typewriter"></div>
+               </div>
+            </div>
+         </div>
+         <!-- step 2 -->
+         <div class="row">
+            <div class="col-md-offset-2 col-md-4 mobile-visible sr-right-text">
+               <h3>Etap 2 Praktyka</h3>
+               <p>Korzystaj z udostępnionych materiałów - oglądaj video oraz wykonuj zadania praktyczne.</p>
+            </div>
+            <div class="col-md-6 sr-left">
+               <img src="img/step2-image.png">
+            </div>
+            <div class="col-md-4 mobile-hidden sr-left-text">
+               <h3>Etap 2 Praktyka</h3>
+               <p>Korzystaj z udostępnionych materiałów - oglądaj video oraz wykonuj zadania praktyczne.</p>
+            </div>
+         </div>
+         <!-- step 3 -->
+         <div class="row">
+            <div class="col-md-offset-2 col-md-4 sr-right-text2">
+               <h3>Etap 3 Doświadczenie</h3>
+               <p>Napisz program i przedstaw go światu. Pokaż innym, że się rozwijasz zamiast bezproduktywnie spędzać czas.</p>
+            </div>
+            <div class="col-md-6 sr-right2">
+               <img src="img/step3-image.png">
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="bg-silver small-section swift">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+               <figure>
+                 <img src="img/footer_swift.png">
+               </figure>
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12">
+               <h2>Twórz wspaniałe aplikacje</h2>
+               <p>Chcesz być twórcą aplikacji? Rozwijaj się poprzez korzystanie z narzędzi, dzięki którym stworzysz niesamowite apki i dotrzesz do szerszego grona odbiorców.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <footer>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 col-md-4 text-center">
+               <span>Miejsce na linki</span>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+              <span>Miejsce na linki</span>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+               <span>Miejsce na linki</span>
+            </div>
+         </div>
+            <div class="col-lg-12 copyright text-center">
+               <span>@ 2017 Miejsce na Copyright</span>
+            </div>
+      </div>
+   </footer>
+   <script src="js/jquery.scrollLock.simple.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+   <script src="js/scrollreveal.min.js"></script>
+   <script src="js/creative.js"></script>
+   <script src="js/particles.js"></script>
+   <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz - Answer2You</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css?ver=9" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   <style>
+      *, *:before, *:after {box-sizing:border-box;}
+      .container {margin-bottom:50px;}
+      .panel-heading {
+         margin-top:10px;
+         padding:25px;
+         font-size:18px;
+         display:block;
+         font-weight:400;
+         cursor:pointer;
+      }
+      .panel-default .panel-heading {line-height:1.2;}
+      .q1 > .panel-heading, .q2 > .panel-heading, .q3 > .panel-heading, .q4 > .panel-heading, .q5 > .panel-heading {border:2px solid transparent;}
+      .q1 > .panel-heading:hover, .q2 > .panel-heading:hover, .q3 > .panel-heading:hover, .q4 > .panel-heading:hover, .q5 > .panel-heading:hover {border:2px solid lightblue;}
+      .q1 > .panel-heading:first-child:hover, .q2 > .panel-heading:first-child:hover, .q3 > .panel-heading:first-child:hover, .q4 > .panel-heading:first-child:hover, .q5 > .panel-heading:first-child:hover {border:2px solid transparent;}
+      label {
+         width:100%;
+         height:100%;
+      }
+      .quiz-footer {
+         width:100%;
+         margin:auto;
+      }
+      i {
+         margin-left:5px;
+         margin-right:5px;
+         color:#ddd;
+      }
+      button {
+         padding:15px;
+         background:transparent;
+         border:1px solid silver;
+         position:relative;
+         margin:0 auto;
+      }
+      button:nth-child(2) {width:100%;}
+      button:hover, button:focus {border-color:gray;}
+      button:focus {outline:0;}
+      .wrapper-bottom {
+         width:100%;
+         text-align:center;
+      }
+      .panel-default > .panel-heading:first-child {
+         font-size:18px;
+         font-weight:600;
+      }
+      .well {
+         margin-top:50px;
+         padding-bottom:10px;
+      }
+      .well > p {
+         font-weight:600;
+         line-height:1.2;
+      }
+      .panel-collapse {cursor:default;}
+      .panel-collapse > p {line-height:1.2;}
+      .well > p > span, .panel-collapse > p > span {font-weight:400;}
+      .panel-collapse > p > span {
+         padding:5px;
+         display:block;
+      }
+      #user-score {display:none;}
+      #correct_answer {color:green;}
+      .panel-heading-score {
+         padding:10px;
+         margin:0;
+         border:2px solid transparent;
+      }
+      .panel:hover {cursor:pointer;}
+   </style>
+</head>
+<body id="page-top">
+   <div class="container">
+      <div class="panel-group">
+         <div class="panel-default q1">
+            <div class="panel-heading">Pytanie 1</div>
+            <label class="panel-heading" for="q1_1"><input type="radio" name="item1" value="1" id="q1_1"> Odpowiedź 1 (prawidłowa)</label>
+            <label class="panel-heading" for="q1_2"><input type="radio" name="item1" value="2" id="q1_2"> Odpowiedź 2</label>
+            <label class="panel-heading" for="q1_3"><input type="radio" name="item1" value="3" id="q1_3"> Odpowiedź 3</label>
+            <label class="panel-heading" for="q1_4"><input type="radio" name="item1" value="4" id="q1_4"> Odpowiedź 4</label>
+          </div>
+         <div class="quiz-footer text-center">
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         </div>
+      </div>
+      <div class="panel-group">
+          <div class="panel-default q2">
+            <div class="panel-heading">Pytanie 2</div>
+            <label class="panel-heading" for="q2_1"><input type="radio" name="item2" value="1" id="q2_1"> Odpowiedź 1</label>
+            <label class="panel-heading" for="q2_2"><input type="radio" name="item2" value="2" id="q2_2"> Odpowiedź 2 (prawidłowa)</label>
+            <label class="panel-heading" for="q2_3"><input type="radio" name="item2" value="3" id="q2_3"> Odpowiedź 3</label>
+            <label class="panel-heading" for="q2_4"><input type="radio" name="item2" value="4" id="q2_4"> Odpowiedź 4</label>
+          </div>
+         <div class="quiz-footer text-center">
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         </div>
+      </div>
+      <div class="panel-group">
+          <div class="panel-default q3">
+            <div class="panel-heading">Pytanie 3</div>
+            <label class="panel-heading" for="q3_1"><input type="radio" name="item3" value="1" id="q3_1"> Odpowiedź 1</label>
+            <label class="panel-heading" for="q3_2"><input type="radio" name="item3" value="2" id="q3_2"> Odpowiedź 2 (prawidłowa)</label>
+            <label class="panel-heading" for="q3_3"><input type="radio" name="item3" value="3" id="q3_3"> Odpowiedź 3</label>
+            <label class="panel-heading" for="q3_4"><input type="radio" name="item3" value="4" id="q3_4"> Odpowiedź 4</label>
+          </div>
+         <div class="quiz-footer text-center">
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         </div>
+      </div>
+      <div class="panel-group">
+          <div class="panel-default q4">
+            <div class="panel-heading">Pytanie 4</div>
+            <label class="panel-heading" for="q4_1"><input type="radio" name="item4" value="1" id="q4_1"> Odpowiedź 1</label>
+            <label class="panel-heading" for="q4_2"><input type="radio" name="item4" value="2" id="q4_2"> Odpowiedź 2</label>
+            <label class="panel-heading" for="q4_3"><input type="radio" name="item4" value="3" id="q4_3"> Odpowiedź 3 (prawidłowa)</label>
+            <label class="panel-heading" for="q4_4"><input type="radio" name="item4" value="4" id="q4_4"> Odpowiedź 4</label>
+          </div>
+         <div class="quiz-footer text-center">
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         </div>
+      </div>
+      <div class="panel-group">
+         <div class="panel-default q5">
+            <div class="panel-heading">Przykładowe pytanie</div>
+            <label class="panel-heading" for="q5_1"><input type="radio" name="item5" value="1" id="q5_1"> Odpowiedź 1</label>
+            <label class="panel-heading" for="q5_2"><input type="radio" name="item5" value="2" id="q5_2"> Odpowiedź 2</label>
+            <label class="panel-heading" for="q5_3"><input type="radio" name="item5" value="3" id="q5_3"> Odpowiedź 3</label>
+            <label class="panel-heading" for="q5_4"><input type="radio" name="item5" value="4" id="q5_4"> Odpowiedź 4 (prawidłowa</label>
+         </div>
+         <div class="quiz-footer text-center">
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         </div>
+      </div>
+      <div class="wrapper-bottom">
+         <button id="ansButton">Sprawdź odpowiedzi</button>
+      </div>
+      <div class="quiz-footer text-center">
+         <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+         <i class="fa fa-2x fa-window-minimize" aria-hidden="true"></i>
+      </div>
+      <div id="user-score">
+         <div class="col-md-offset-4 col-md-4">
+            <div class="well">
+               <p>Wynik:<span id="score"></span><span id="maxscore"></span></p>
+               <p id="incorrect"></p>
+            </div>
+            <button onclick="javascript:location.href='wstep_01.html'">Rozpocznij test jeszcze raz</button>
+         </div>
+      </div>
+   </div>
+   <script src="../js/jquery.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
+<script>
+window.onload = function() {
+   document.getElementById("ansButton").onclick = displayAnswers;
+}
+// correct answers
+function displayAnswers() {$( ".q1 > label:eq(0), .q2 > label:eq(1), .q3 > label:eq(1), .q4 > label:eq(2), .q5 > label:eq(3)").css( "background-color", "#4d884d" );}
+
+/* answers */
+function incorrectAnswers() {
+   var score = 0; // user score
+   var maxscore = $('.panel-group').length // total score
+   var Tab = []; // array for wrong answers ([0]->question, [1]->answer, [2]->number)
+
+   // the value of an input radio
+   var q1 = $('input[name=item1]:checked', '.q1').val();
+   var q2 = $('input[name=item2]:checked', '.q2').val();
+   var q3 = $('input[name=item3]:checked', '.q3').val();
+   var q4 = $('input[name=item4]:checked', '.q4').val();
+   var q5 = $('input[name=item5]:checked', '.q5').val();
+
+   // q1
+   if(q1 == 1) {score++;}
+   else if(q1 == 2) {$(".q1 > label:eq(1)" ).css( "background-color", "red");}
+   else if(q1 == 3) {$(".q1 > label:eq(2)" ).css( "background-color", "red");}
+   else if(q1 == 4) {$(".q1 > label:eq(3)").css( "background-color", "red");}
+   if(q1 != 1 || q3 == undefined) {Tab.push($('.q1 > .panel-heading:eq(0)').text(), $('.q1 > .panel-heading:eq(1)').text(), "1");}
+
+   // q2
+   if(q2 == 1) {$(".q2 > label:eq(0)").css( "background-color", "red" );}
+   else if(q2 == 2) {score++;}
+   else if(q2 == 3) {$(".q2 > label:eq(2)" ).css( "background-color", "red");}
+   else if(q2 == 4) {$(".q2 > label:eq(3)").css( "background-color", "red");}
+   if(q2 != 2 || q3 == undefined) {Tab.push($('.q2 > .panel-heading:eq(0)').text(), $('.q2 > .panel-heading:eq(2)').text(), "2");}
+
+   // q3
+   if(q3 == 1) {$(".q3 > label:eq(0)").css( "background-color", "red" );}
+   else if(q3 == 2) {score++;}
+   else if(q3 == 3) {$(".q3 > label:eq(2)" ).css( "background-color", "red");}
+   else if(q3 == 4) {$(".q3 > label:eq(3)").css( "background-color", "red");}
+   if(q3 != 2 || q3 == undefined) {Tab.push($('.q3 > .panel-heading:eq(0)').text(), $('.q3 > .panel-heading:eq(2)').text(), "3");}
+
+   // q4
+   if(q4 == 1) {$(".q4 > label:eq(0)").css( "background-color", "red" );}
+   else if(q4 == 2) {$(".q4 > label:eq(1)").css( "background-color", "red" );}
+   else if(q4 == 3) {score++;}
+   else if(q4 == 4) {$(".q4 > label:eq(3)").css( "background-color", "red" );}
+   if(q4 != 3 || q4 == undefined) {Tab.push($('.q4 > .panel-heading:eq(0)').text(), $('.q4 > .panel-heading:eq(3)').text(), "4");}
+
+   // q5
+   if(q5 == 1) {$(".q5 > label:eq(0)").css( "background-color", "red" );}
+   else if(q5 == 2) {$(".q5 > label:eq(1)").css( "background-color", "red" );}
+   else if(q5 == 3) {$(".q5 > label:eq(2)").css( "background-color", "red" );}
+   else if(q5 == 4) {score++;}
+   if(q5 != 4 || q5 == undefined) {Tab.push($('.q5 > .panel-heading:eq(0)').text(), $('.q5 > .panel-heading:eq(4)').text(), "5");}
+   
+   if(maxscore != score) {
+      document.getElementById("incorrect").innerHTML = "<br>" + "Błędy: ";
+      var TabEl = 0;
+      for(var i=0;i<=maxscore;i++) {
+         if(i + score < maxscore) {
+            $( ".well" ).append("<div class='panel'><div class='panel-heading panel-heading-score' data-toggle='collapse' href='#collapse"+ i +"'><h4 class='panel-title text-center'><a id='question"+ i +"'></a></h4></div><div id='collapse"+ i +"' class='panel-collapse collapse'><p><span id='incorrect_answer"+ i +"'></span></p><p><span id='correct_answer"+ i +"'></span></p></div></div>"); 
+            document.getElementById("incorrect_answer"+ i +"").innerHTML = Tab[TabEl];
+            TabEl++;
+            document.getElementById("correct_answer"+ i +"").innerHTML = "<br>" + Tab[TabEl];
+            TabEl++;
+            document.getElementById("question"+ i +"").innerHTML = "Pytanie " + Tab[TabEl];
+            TabEl++;
+         }
+      }
+   }
+   document.getElementById("score").innerHTML = " " + score + " / ";
+   document.getElementById("maxscore").innerHTML = maxscore;
+}
+
+$('#ansButton').click(function(){
+   // disable each inputs in this quiz and remove border-color
+   $("input").attr('disabled','disabled');
+   $(".panel-heading").hover(function(){
+       $(this).css("border","2px solid transparent");
+    });
+   incorrectAnswers();
+   
+   $('.panel-default>.panel-heading').css('cursor', 'default');
+   document.getElementById('user-score').style.display = 'block';
+   document.getElementById('ansButton').disabled = true;
+   $("html, body").animate({ scrollTop: $(document).height() }, 1400);
+});
+</script>
+</body>
+</html>                
